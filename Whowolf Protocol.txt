@@ -1,0 +1,27 @@
+send ->
+	{"action":"host", "settings":{"werwolf":7,"hexe":1,"gerber":0},"name":"Kilian"}
+return ->
+	{"status":"success","lobbyID":123,"playerID":41}
+	{"status":"too many whowolfs"}
+
+
+
+send ->
+	{"action":"connect", "lobbyID":123,"name":"Stani"}
+return ->
+	{"status":"success", "playerID":57,"players":["Kilian","Stani"], "lobbySettings":{"werwolf":7,"hexe":1,"gerber":0}}
+	{"status":"Name taken, Lobby Id not found, Lobby already full"}
+
+
+
+send ->
+	{"action":"waiting","playerID":57}
+return ->
+	{"gamestate":"start","role":"werwold"}
+	{"gamestate":"changeSettings","lobbySettings":{"werwolf":2,"hexe":1,"gerber":1}}
+	{"gamestate":"abort"}
+	{"gamestate":"playerJoin","player":"Pingist","count":3}
+
+
+send ->
+	{"action":"inGameAction", "action": {action:"kill",target:"Stani"}, "playerID":57}
