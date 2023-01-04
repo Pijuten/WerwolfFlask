@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS, cross_origin
 
-import HostService
+from services import HostService
 
 app = Flask(__name__)
 CORS(app, support_credentials=True)
