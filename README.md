@@ -1,2 +1,2 @@
-# WerwolfFlask
+# WerwolfFlask-Server
 WufWUf
